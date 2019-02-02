@@ -1,0 +1,38 @@
+<p>First of all &ndash; what does it mean &laquo;Fine Cut&raquo;?<br /></p>
+<p>We got rid of everything we've found unnecessary to develop simple website.</p>
+<p>John Lennon sang: &laquo;All You Need is Love&raquo;.<br />
+We say: &laquo;all we need is UI&raquo;.</p>
+
+<p>Then, for complete understanding Fine Cut, it is not enough to read this documentation.</p>
+<br />
+<p>However, we suppose, that there will be a lot of people, who don't ever need complete understanding.</p>
+<br />
+<p>But, if you wish, you need to investigate only one file: &laquo;_engine/index.php&raquo;</p>
+
+<p>Somebody will tell: "Are You Serious?"</p>
+<br />
+<strong>OK, here is small FAQ:</strong><br /><br />
+
+<li><strong>What are pages if there is no DB?</strong><br />
+PHP file of Page and TXT files of its Properties.<br />
+If You need anything else -- Use Your Favorite Framework!
+<br />
+<br />
+</li>
+
+<li><strong>What with other content? I need e-mail, rss, geoIP, maps, web-services...</strong>
+<p>As for web-services, any page could be marked as <strong>&laquo;non cacheable&raquo;</strong><br />
+ at Pages Manager => Settings tab.</p><br />
+
+<p>As for the rest &ndash; write your own code.<br />
+Please, lookup for <a href="/about/examples/">examples page</a>, if not yet.</p><br />
+
+</li>
+
+<li><strong>You told about perfomance, did you?</strong>
+<p>I could tell that on my nettop with  AMD C-60 CPU inside, exactly this page generation process passthrough in ~0.05 sec. And while that generation, page stores in static. Therefore, when i will request page again, i will get it after ~0.007 sec. I use standard HDD 5400 rpm, and didn't any software optimisatoins.</p>
+</li>
+
+
+
+</ul>

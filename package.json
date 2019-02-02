@@ -1,0 +1,52 @@
+{
+	"name": "aynchronous-zero",
+	"displayName": "aynchronous-zero-holy",
+	"description": "holyjs Moscow 2018 aynchronous zero presentation",
+	"version": "1.0.0",
+	"publisher": "went.out",
+	"author": "went.out@gmail.com",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wentout/aynchronous-zero"
+	},
+	"engines": {
+		"nodejs": "^10.12.0"
+	},
+	"keywords": [
+		"markdown",
+		"reveal js",
+		"slide",
+		"presenttion",
+		"async_hooks"
+	],
+	"main": "./app.js",
+	"dependencies": {
+		"async": "^2.6.1",
+		"body-parser": "^1.18.3",
+		"cli-color": "^1.4.0",
+		"cli-highlight": "^2.0.0",
+		"context-dive": "^2.2.5",
+		"express": "^4.16.4",
+		"fs-extra": "^7.0.1",
+		"gray-matter": "^4.0.1",
+		"highlight.js": "^9.13.1",
+		"lodash": "^4.17.11",
+		"moment": "^2.22.2",
+		"mongoose": "^5.3.15",
+		"repl-sockets": "^1.0.5",
+		"reveal.js": "^3.7.0",
+		"serve-favicon": "^2.5.0"
+	},
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-postcss": "^8.0.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.4",
+		"jshint": "^2.9.6",
+		"postcss-sorting": "^4.0.1",
+		"shelljs": "^0.8.3",
+		"supervisor": "^0.12.0"
+	}
+}
