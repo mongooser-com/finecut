@@ -3,4 +3,4 @@ Repo content includes example of backend.
 Actually, this is code of FineCut CMS Web Site.
 
 Current Version: 1.0
-More Info: https://github.com/wentout/Fine-Cut-Engine
+More Info: https://github.com/mongooser-com/finecut
