@@ -1,24 +1,26 @@
-const gulp			=	require('gulp');
-const sass			=	require('gulp-sass');
-const autoprefixer	=	require('gulp-autoprefixer');
-const sourcemap		=	require('gulp-sourcemaps');
-const postcss		=	require('gulp-postcss');
-const cssSorting	=	require('postcss-sorting');
-const SASS_PATH		=	'./sass/';
-const CSS_PATH		=	'./content/css/';
+'use strict';
 
-gulp.task('sass', () => {
-	return gulp	.src	( SASS_PATH + '**/*.{scss,sass}' )
-				.pipe	( sourcemap.init() )
-				.pipe	( sass() )
-				.on		( 'error', err => { return { title: 'Sass', message: err.message } } )
-				.pipe	( autoprefixer({ browsers: ['last 5 versions'], cascade: false }) )
-				.pipe	( postcss(
-							[ cssSorting({ "properties-order" : "alphabetical"}) ]))
-				.pipe	( sourcemap.write('./sourcemaps/') )
-				.pipe	( gulp.dest( CSS_PATH ) );
-});
+global.G = {
+	tasks         : require('./config/gulp/tasks/tasks'),
 
-gulp.task( 'default', () => {
-	gulp.watch( SASS_PATH + '**/*.{scss,sass}', ['sass'] );
-});
+	gulp          : require('gulp'),
+	sass          : require('gulp-sass'),
+	autoprefixer  : require('gulp-autoprefixer'),
+	sourcemap     : require('gulp-sourcemaps'),
+	postcss       : require('gulp-postcss'),
+	cssSorting    : require('postcss-sorting'),
+
+	path          : {
+		engine    : {
+			style     : {
+				sass     : './engine/dev/sass/',
+				css      : './engine/stylesheets'
+			}
+		}
+	}
+	
+}
+
+G.tasks.forEach( module => {
+	require(module)();
+})
