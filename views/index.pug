@@ -1,0 +1,233 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		title=title
+		include ./blocks/head
+	body(style="")
+		#container
+			#tabsContent
+				include ./blocks/menu
+
+				table(border='0', width='100%')
+					tbody
+					tr(valign='top')
+						td
+						#treePages.ui-corner-all  
+						td
+						#treeToolbar.ui-corner-all
+							center
+							span#leaf_add
+							br
+							span#leaf_del
+							br
+							hr
+							span#leaf_copy
+							br
+							span#leaf_paste
+							br
+							hr
+							span#leaf_copy_path
+							br
+							span#leaf_copy_url
+							br
+							span#leaf_go_url
+							br
+							hr
+							span#tree_refresh
+							hr
+							hr
+							span#leaf_save
+							hr
+							hr
+							hr
+							span#toggle_tree
+						td(width='98%')
+						#treePagesEditor.ui-corner-all.tabbable
+							ul.nav.nav-tabs
+							// set class to active //
+							li
+								a(href='#settingsTab', data-toggle='tab') Settings
+							li.active
+								a#pages-editor-tab-btn(href='#pages-editor-tab', data-toggle='tab') Page Editor
+							li
+								a(href='#pageInfo', data-toggle='tab') Properties
+							li
+								a(href='#pageBlocks', data-toggle='tab') Blocks
+							.tab-content
+							#settingsTab.tab-pane
+								label(for='treePagesEditor-title') Page Title
+								input#treePagesEditor-title(type='text', size='75')
+								label(for='treePagesEditor-keywords') Page Keywords
+								input#treePagesEditor-keywords(type='text', size='75')
+								label(for='treePagesEditor-description') Page Description
+								textarea#treePagesEditor-description.tabEditable(cols='55', rows='5')
+								div(style='margin:0px 0px 10px 0px')
+								div(style='margin: 15px 0px 12px 0px')
+								input#treePagesEditor-pageIsCode(type='checkbox', style='display: inline')
+								label(for='treePagesEditor-pageIsCode', style='display: inline') Do Not Make Cache: use Template for Each Response
+								label(for='treePagesEditor-additional') Head Additional
+								textarea#treePagesEditor-additional.tabEditable(cols='55', rows='5')
+							#pages-editor-tab.tab-pane.active
+								//
+								<div id = "pages-editor-wrapper"><div id = "pages-editor"></div></div>
+								<textarea id = "pages-editor"></textarea>
+								//
+								#pages-editor-buttons
+								span#pages-editor-buttons-h1 h1
+								span#pages-editor-buttons-h2 h2
+								span#pages-editor-buttons-h3 h3
+								//
+									<span id = "pages-editor-buttons-h4">h4</span>
+									<span id = "pages-editor-buttons-h5">h5</span>
+									<span id = "pages-editor-buttons-h6">h6</span>
+									//
+								span#pages-editor-buttons-P P
+								span#pages-editor-buttons-B
+									b B
+								span#pages-editor-buttons-I
+									i I
+								span#pages-editor-buttons-Link Link
+								span#pages-editor-buttons-Image Image
+								span#pages-editor-buttons-Help Help
+								select#ace_theme(size='1')
+									optgroup(label='Bright')
+									option(value='ace/theme/chrome') Chrome
+									option(value='ace/theme/clouds') Clouds
+									option(value='ace/theme/crimson_editor') Crimson Editor
+									option(value='ace/theme/dawn') Dawn
+									option(value='ace/theme/dreamweaver') Dreamweaver
+									option(value='ace/theme/eclipse') Eclipse
+									option(value='ace/theme/github') GitHub
+									option(value='ace/theme/solarized_light') Solarized Light
+									option(value='ace/theme/textmate') TextMate
+									option(value='ace/theme/tomorrow') Tomorrow
+									optgroup(label='Dark')
+									option(value='ace/theme/clouds_midnight') Clouds Midnight
+									option(value='ace/theme/cobalt') Cobalt
+									option(value='ace/theme/idle_fingers') idleFingers
+									option(value='ace/theme/kr_theme') krTheme
+									option(value='ace/theme/merbivore') Merbivore
+									option(value='ace/theme/merbivore_soft') Merbivore Soft
+									option(value='ace/theme/mono_industrial') Mono Industrial
+									option(value='ace/theme/monokai') Monokai
+									option(value='ace/theme/pastel_on_dark') Pastel on dark
+									option(value='ace/theme/solarized_dark') Solarized Dark
+									option(value='ace/theme/twilight') Twilight
+									option(value='ace/theme/tomorrow_night') Tomorrow Night
+									option(value='ace/theme/tomorrow_night_blue') Tomorrow Night Blue
+									option(value='ace/theme/tomorrow_night_bright') Tomorrow Night Bright
+									option(value='ace/theme/tomorrow_night_eighties') Tomorrow Night 80s
+									option(value='ace/theme/vibrant_ink') Vibrant Ink
+								#pages-editor-container
+								#pages-editor
+							#pageInfo.tab-pane
+								textarea#treePagesEditor-info.tabEditable(cols='100', rows='5')
+								#treePagesEditor-info-snippet.json-editor
+							#pageBlocks.tab-pane
+								.well(style='padding: 7px 15px 7px 15px', data-bind='visible: visibl()')
+								div
+									.pull-right
+									strong  Additional Data blocks for this Page 
+									.pull-left
+									span.btn.btn-mini(data-bind='click: addBlock')  Add 
+								.ui-corner-all(data-bind='foreach: blocks', style='border: 1px solid #ccc; height: 100%; overflow: auto; padding: 10px')
+								.well.block-container(style='padding: 10px')
+									div
+									textarea(data-bind='value: value', style='width: 91%', rows='7')
+									.pull-right
+										span.btn.btn-mini(data-bind='click: $root.delBlock', style='display: inline-block; padding: 2px 3px 1px 3px;\
+										margin-bottom: 20px; border: 1px solid #ccc')
+										i.icon-remove
+										br
+										span.btn.btn-mini(data-bind='click: $root.addBlock', style='display: inline-block; padding: 2px 3px 1px 3px;\
+										margin-bottom: 20px; border: 1px solid #ccc')
+										i.icon-ok
+										br
+				#fileManager
+				#elfinder
+				#templManager
+				#templsButtons.ui-corner-all
+					table(border='0', cellpadding='0', cellspacing='0', style='margin:10px 0px 10px 0px')
+					tbody
+						tr
+						td
+							#templManager-template-container
+						td(style='padding: 0px 50px 0px 50px')
+							span#add_template.btn  Add 
+							span#del_template.btn  Del 
+							span#save_template.btn.btn-inverse(style='margin: 2px 10px 2px 10px; font-weight: bold', title='Save Template ( Ctrl + S )')  SAVE 
+						td(valign='bottom')
+							ul.nav.nav-tabs
+							li#templ-source-tab-btn.active
+								a(href='#templ-source-tab', data-toggle='tab') Source
+							li
+								a(href='#templHeader-tab', data-toggle='tab') Header
+							li
+								a(href='#templ-snippet-tab', data-toggle='tab') Snippet
+					.tab-content
+					#templ-source-tab.tab-pane.active
+						<textarea id = "templ-source-editor" rows = "20" cols = "70" class = "tabEditable"></textarea>
+						#templ-source-container
+						#templ-source-editor
+					#templHeader-tab.tab-pane
+						label(for='templHeader-title') Page Title
+						input#templHeader-title(type='text', size='75')
+						label(for='templHeader-keywords') Page Keywords
+						input#templHeader-keywords(type='text', size='75')
+						label(for='templHeader-description') Page Description
+						textarea#templHeader-description.tabEditable(cols='55', rows='5')
+						div(style='margin: 15px 0px 12px 0px')
+						input#templHeader-pageIsCode(type='checkbox', style='display: inline')
+						label(for='templHeader-pageIsCode', style='display: inline') Do Not Make Cache: use Template for Each Response
+						label(for='templHeader-additional') Head Additional
+						textarea#templHeader-additional.tabEditable(cols='55', rows='5')
+					#templ-snippet-tab.tab-pane
+						textarea#templ-snippet-editor.tabEditable(rows='5', cols='30')
+						#snippeteditor.json-editor
+				#settingsManager
+				.well(style='padding: 10px 10px 7px 10px')
+					table(border='0', cellpadding='0', style='margin: 0px;')
+					tbody
+						tr
+						td(style='padding: 0px 0px 0px 15px')
+							label.checkbox(for='settings-growl-notify')
+							input#settings-growl-notify(type='checkbox')
+							nobr Use Growl Notifications
+						td(style='padding: 0px 0px 0px 35px')
+							label.checkbox(for='settings-trees-expand')
+							input#settings-trees-expand(type='checkbox', checked='checked')
+							nobr JSON double click Expand
+						td(style='padding: 7px 10px 0px 70px')
+							input#clearCacheButton(type='button', value='Clear Cache', style='padding: 3px 15px 3px 15px')
+							input#saveSettingsButton(type='button', value='Save Settings', style='padding: 3px 15px 3px 15px')
+				.well
+					#settings-editor-text-container
+					#settings-editor-text(style='width: 99%; height: 470px')
+			div(style='visibility: hidden; display: none')
+			#tree-dialog-leaf-add-form(title='Create new Leaf')
+				label(for='tree-dialog-leaf-add-form-text') Leaf Name
+				input#tree-dialog-leaf-add-form-text.text.ui-widget-content.ui-corner-all(type='text', name='name', size='33')
+				#tree-dialog-leaf-add-form-checkbox-div
+				label(for='tree-dialog-leaf-add-form-checkbox')
+					table(border='0')
+					tbody
+						tr
+						td
+							input(type='checkbox', checked='')
+						td    Create Leaf at the Same Level  ( Otherwise : Inside )
+				input#tree-dialog-leaf-add-form-checkbox(type='checkbox', checked='')
+			script#ui-dialog-message(type='text/x-jquery-tmpl').
+				<div title="${title}" id = "ui-dialog-message-dialog">
+				<p>
+				<span class = "ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+				<span class = "message">${message}</span>
+				</p>
+				</div>
+			script#ui-dialog-confirm(type='text/x-jquery-tmpl').
+				<div title="${title}" id = "ui-dialog-confirm-dialog">
+				<p>
+				<span class = "ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+				<span class = "message">${message}</span>
+				</p>
+				</div>

@@ -1,0 +1,33 @@
+{
+	"title": "Application",
+	"scripts": [
+		"lib/jQuery/jquery-1.7.2.min.js",
+		"lib/jQuery/jquery.cookie.js",
+		"lib/jQuery/jquery.transit.min.js",
+		"lib/jQuery/jquery.tmpl.js",
+		"javascripts/chosen/chosen.jquery.min.js",
+		"javascripts/stanlemon-jgrowl-463438153435/jquery.jgrowl_minimized.js",
+		"lib/jQuery/jquery-ui/smoothness/jquery-ui-1.8.18.custom.min.js",
+		"javascripts/DavidDurman-FlexiJsonEditor/jquery.jsoneditor.js",
+		"lib/bootstrap/js/bootstrap.js",
+		"lib/bootstrap/js/bootstrap.tooltip.js",
+		"lib/bootstrap/js/bootstrap.popover.js",
+		"lib/elfinder-1.2/js/elfinder.full.js",
+		"lib/tree_custom/treeControl.js",
+		"javascripts/ace-editor/src-min-noconflict/ace.js",
+		"javascripts/einars-js-beautify/beautify.js",
+		"lib/KnockOut/knockout-2.0.0.js",
+		"lib/KnockOut/knockout.mapping-latest.js",
+		"startup.js"
+	],
+	"styles": [
+		"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+		"./lib/jQuery/jquery-ui/smoothness/smoothness.css",
+		"./lib/elfinder-1.2/css/elfinder.css",
+		"./javascripts/DavidDurman-FlexiJsonEditor/jsoneditor.css",
+		"./lib/tree_custom/style.css",
+		"./stylesheets/style.css",
+		"./javascripts/stanlemon-jgrowl-463438153435/jquery.jgrowl.css",
+		"./javascripts/chosen/chosen.css"
+	]
+}

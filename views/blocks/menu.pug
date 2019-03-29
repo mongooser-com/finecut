@@ -1,0 +1,11 @@
+
+- const links = [{"link": "#pagesManager", "text": "Pages Manager"}, {"link":"#templManager", "text": "Templates"}, {"link": "#fileManager", "text": "Files Manager"}, {"link": "#settingsManager","text": "Settings"}]
+ul.tabs
+	li
+		b.logo Admin's Page
+
+	each tab in links
+		li
+			a(href=tab.link)=tab.text
+
+
