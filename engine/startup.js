@@ -909,7 +909,7 @@ Ctrl + S : Save Leaf\n\
 			$("#treePagesEditor-template").trigger('liszt:updated');
 
 		}
-
+// Снести к хуям этот chosen jquery
 		$( '#treePagesEditor-template' ).chosen().change( function(){
 			var val = $( '#treePagesEditor-template' ).val();
 			templateAction( 'getInfo', val,
